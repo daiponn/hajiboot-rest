@@ -10,4 +10,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     @Query("SELECT x FROM Customer x ORDER BY x.firstName, x.lastName")
     List<Customer> findAllOrderByName();
 
+    <T> T findOneById(Integer id, Class<T> type);
+
+
 }

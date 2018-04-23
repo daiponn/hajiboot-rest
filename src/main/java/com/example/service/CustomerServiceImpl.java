@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.domain.Customer;
+import com.example.domain.CustomerFirstname;
 import com.example.exception.CustomerNotfoundException;
 import com.example.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     public List<Customer> findAll(){
         return customerRepository.findAll();
-    }
+}
 
     public Customer findOne(Integer id){
         return customerRepository.findById(id).orElseThrow(() -> new CustomerNotfoundException(id));
@@ -31,6 +32,11 @@ public class CustomerServiceImpl implements CustomerService{
 
     public void delete(Integer id){
         customerRepository.deleteById(id);
+    }
+
+    //以下お試し
+    public CustomerFirstname findOneForFirstName(Integer id){
+        return customerRepository.findOneById(id, CustomerFirstname.class);
     }
 
 }
