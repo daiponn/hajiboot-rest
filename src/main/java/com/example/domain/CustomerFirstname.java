@@ -7,7 +7,9 @@ import lombok.Value;
 
 //DTO変換お試し用のクラス
 
-@Value
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CustomerFirstname {
     private String firstName;
 }

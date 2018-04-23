@@ -36,7 +36,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     //以下お試し
     public CustomerFirstname findOneForFirstName(Integer id){
-        return customerRepository.findOneById(id, CustomerFirstname.class);
+        return customerRepository.findOneforFirstname(id);
     }
 
 }
